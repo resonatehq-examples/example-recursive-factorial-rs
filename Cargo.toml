@@ -1,0 +1,20 @@
+[package]
+name = "example-recursive-factorial-rs"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Distributed and durable recursive factorial calculations with Resonate's Rust SDK."
+
+[[bin]]
+name = "worker"
+path = "src/bin/worker.rs"
+
+[[bin]]
+name = "client"
+path = "src/bin/client.rs"
+
+[dependencies]
+resonate = { package = "resonate-sdk", git = "https://github.com/resonatehq/resonate-sdk-rs", branch = "main" }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
